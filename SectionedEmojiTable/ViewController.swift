@@ -103,6 +103,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(70)
+        
+    }
+    
+    //from: http://stackoverflow.com/questions/31381762/swift-ios-8-change-font-title-of-section-in-a-tableview
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+ 
+        let title = UILabel()
+        title.font = UIFont(name: "Futura", size: 38)!
+        title.textColor = UIColor.lightGray
+        
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font=title.font
+        header.textLabel?.textColor=title.textColor
+        
+    }
     
     
     let faceEmoji = ["😀","😁","😂","😃","😆","😇","😈","👿",]   //created array
